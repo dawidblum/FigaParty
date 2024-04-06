@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FillCube : MonoBehaviour
+public class Jar : MonoBehaviour
 {
     public Material cubeMaterial;
     public float fillSpeed = 1f;
     
     private float fillHeight = -.5f;
     private bool isFilling = false;
+    public bool canFill;
 
     void Start()
     {
@@ -17,6 +18,9 @@ public class FillCube : MonoBehaviour
 
     void Update()
     {
+        if (!canFill) return; 
+    
+        
         if (Input.GetKey(KeyCode.Space))
         {
             isFilling = true;
