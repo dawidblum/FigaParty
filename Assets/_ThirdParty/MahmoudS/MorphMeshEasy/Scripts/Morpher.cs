@@ -32,8 +32,8 @@ public class Morpher : MonoBehaviour
     [Tooltip("Mesh should be read/write enabled from the model import settings")]
     [SerializeField] private Mesh _newMesh;
 
-    [SerializeField] private Material _oldMat;
-    [SerializeField] private Material _newMat;
+    [SerializeField] public Material _oldMat;
+    [SerializeField] public Material _newMat;
 
     [SerializeField] private MeshFilter _meshFilter;
     [SerializeField] private Renderer _renderer;
@@ -55,8 +55,9 @@ public class Morpher : MonoBehaviour
     private List<VertexPair> _pairsOfVertices2;
 
 
-    private Material _finalMaterial;
+    public Material _finalMaterial;
 
+    
     void Start()
     {
         _interpolatedMesh = new Mesh();
@@ -67,6 +68,8 @@ public class Morpher : MonoBehaviour
             _meshFilter.mesh = _interpolatedMesh;
         }
 
+        _meshFilter.mesh = _interpolatedMesh;
+        
         _oldVertices = _oldMesh.vertices;
         _newVertices = _newMesh.vertices;
 
@@ -78,7 +81,6 @@ public class Morpher : MonoBehaviour
         CreatePairs1();
         CreatePairs2();
 
-        _finalMaterial = new Material(_slider< 0.5? _oldMat:_newMat);
 
     }
 
@@ -161,8 +163,8 @@ public class Morpher : MonoBehaviour
 
         _interpolatedMesh.RecalculateNormals();
 
-        _finalMaterial.Lerp(_oldMat, _newMat, _slider);
-        _finalMaterial.SetTexture("_MainTex", _slider < 0.5f ?_oldMat.GetTexture("_MainTex"): _newMat.GetTexture("_MainTex"));
+        //_finalMaterial.Lerp(_oldMat, _newMat, _slider);
+        //_finalMaterial.SetTexture("_MainTex", _slider < 0.5f ?_oldMat.GetTexture("_MainTex"): _newMat.GetTexture("_MainTex"));
         //_finalMaterial.SetTexture("_BumpMap", _slider < 0.5f ? _oldMat.GetTexture("_BumpMap") : _newMat.GetTexture("_BumpMap"));
         //_finalMaterial.SetTexture("_MetallicGlossMap", _slider < 0.5f ? _oldMat.GetTexture("_MetallicGlossMap") : _newMat.GetTexture("_MetallicGlossMap"));
         //_finalMaterial.SetTexture("_OcclusionMap", _slider < 0.5f ? _oldMat.GetTexture("_OcclusionMap") : _newMat.GetTexture("_OcclusionMap"));

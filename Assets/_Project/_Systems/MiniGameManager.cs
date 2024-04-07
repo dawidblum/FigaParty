@@ -12,17 +12,29 @@ public class MiniGameManager : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI countDownLabel;
     [SerializeField] private string countDownFinishText;
     [SerializeField] private CanvasGroup label;
+    [SerializeField] private Animator tutorialStarter;
     [SerializeField] private AudioLibrary.MusicType miniGameTheme;
     private int countDown;
-
+    
 
     private void Start() {
         countDown = countDownStart;
+        //tutorialStarter.SetTrigger("Hide");
+        Invoke(nameof(DelayStart),8);
+        GameManager.Instance.gameStopped = true;
     }
 
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.Space))
-            StartCoroutine(CountDownRoutine());
+        
+    }
+
+    private void DelayStart() {
+        StartCoroutine(CountDownRoutine());
+    }
+    
+    private IEnumerator DelayTimeStop() {
+        yield return new WaitForSeconds(.3f);
+        Time.timeScale = 0;
     }
 
     private IEnumerator CountDownRoutine() {
@@ -33,6 +45,7 @@ public class MiniGameManager : MonoBehaviour {
 
         switch (countDown) {
             case 0:
+                GameManager.Instance.gameStopped = false;
                 SoundsManager.Instance.PlayAudioShot(AudioLibrary.SoundType.Countdown_Go);
                 break;
             case 1:
@@ -63,6 +76,7 @@ public class MiniGameManager : MonoBehaviour {
             StartCoroutine(CountDownRoutine());
         else {
             label.gameObject.SetActive(false);
+            Time.timeScale = 1;
         }
     }
 }

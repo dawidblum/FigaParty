@@ -38,7 +38,12 @@ public class AudioLibrary : MonoBehaviour {
         Complete,
         Grass,
         Water,
-        Zap
+        Zap,
+        Jar_Filling,
+        Belt,
+        Jar_Fail,
+        Jar_Win,
+        Yay
         
     } 
     
