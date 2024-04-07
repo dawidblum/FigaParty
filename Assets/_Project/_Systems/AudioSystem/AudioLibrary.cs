@@ -27,7 +27,19 @@ public class AudioLibrary : MonoBehaviour {
         Time_Low,
         Minigame_Intro,
         Minigame_Fail,
-        Minigame_Win
+        Minigame_Win,
+        Countdown_Three,
+        Countdown_Two,
+        Countdown_One,
+        Countdown_Go,
+        Rocks,
+        Correct_Person,
+        Incorrect_Person,
+        Complete,
+        Grass,
+        Water,
+        Zap
+        
     } 
     
     public enum MusicType {

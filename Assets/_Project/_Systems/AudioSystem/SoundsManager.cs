@@ -3,14 +3,19 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class SoundsManager : Singleton<SoundsManager> {
-    private AudioSource mainAudio;
-    private AudioSource musicAudio;
+    [SerializeField] private AudioSource mainAudio;
+    [SerializeField] private AudioSource musicAudio;
 
     private AudioLibrary audioLibrary;
     
     [SerializeField] private float fadeDuration = 2f;
     private float currentVolume = 1f;
-    
+
+    protected override void Awake() {
+        base.Awake();
+        audioLibrary = GetComponent<AudioLibrary>();
+    }
+
     public void PlayAudioShot(AudioClip _clip, Vector2? _pitchRange = null, Vector2? _volumeRange = null)
     {
         HandleAudioPitch(_pitchRange);
@@ -41,7 +46,7 @@ public class SoundsManager : Singleton<SoundsManager> {
         if (_pitchRange != null)
             mainAudio.pitch = Random.Range(_pitchRange.Value.x, _pitchRange.Value.y);
         else
-            mainAudio.pitch = 1;
+            mainAudio.pitch = 1.5f;
     }
 
     public void ChangeTrack(AudioLibrary.MusicType _type) {

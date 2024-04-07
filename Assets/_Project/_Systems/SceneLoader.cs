@@ -1,18 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class SceneLoader : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
+public class SceneLoader : Singleton<SceneLoader> {
+    public void LoadScene(int index)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        SceneManager.LoadScene(index);
     }
 }
