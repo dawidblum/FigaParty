@@ -48,6 +48,7 @@ MonoBehaviour:
   countDownLabel: {fileID: 0}
   countDownFinishText: GO!
   label: {fileID: 0}
+  tutorialStarter: {fileID: 0}
   miniGameTheme: 1
 --- !u!1 &8691240330358895893
 GameObject:
@@ -132,7 +133,7 @@ MonoBehaviour:
     type: 17
   - clip: {fileID: 8300000, guid: 4c53bdd63b7fe8b4facd6ba7ac69b37a, type: 3}
     type: 18
-  - clip: {fileID: 8300000, guid: 2446e3d8e2faf5f4faaea50f0d41e9ed, type: 3}
+  - clip: {fileID: 8300000, guid: 54cacaaab5506284ebc21078c0a40d98, type: 3}
     type: 13
   - clip: {fileID: 8300000, guid: 70e2246e9e6fd224885a0d03d0855af3, type: 3}
     type: 20
@@ -142,13 +143,27 @@ MonoBehaviour:
     type: 14
   - clip: {fileID: 8300000, guid: 2a29ddbf05c467345af0f070512f83ed, type: 3}
     type: 22
+  - clip: {fileID: 8300000, guid: 1ffb44b6710efab4b848aa9f4f6cd94b, type: 3}
+    type: 26
   - clip: {fileID: 8300000, guid: 04041d3da9b4add418322f05c3abd5b3, type: 3}
     type: 23
+  - clip: {fileID: 8300000, guid: 676411e715a7ac44aa426904c84aaa0b, type: 3}
+    type: 29
+  - clip: {fileID: 8300000, guid: ddf3eacf334546147ab806c44cc28ab2, type: 3}
+    type: 28
+  - clip: {fileID: 8300000, guid: 2ae159a26cdbf524894c90ded0303778, type: 3}
+    type: 27
+  - clip: {fileID: 8300000, guid: 665de1caf4fbab842bebd238d41a3d3e, type: 3}
+    type: 24
+  - clip: {fileID: 8300000, guid: 2446e3d8e2faf5f4faaea50f0d41e9ed, type: 3}
+    type: 25
   musicList:
-  - clip: {fileID: 8300000, guid: ae685b21d0fe6344fba9d45e4a7dde40, type: 3}
+  - clip: {fileID: 8300000, guid: c220948475b89ba4889029039fde02d2, type: 3}
     type: 1
   - clip: {fileID: 8300000, guid: fa51b444066c412459d96cf947bc1e68, type: 3}
     type: 4
+  - clip: {fileID: 8300000, guid: a71bfb7e0b2e6e04ca497e798fccd266, type: 3}
+    type: 3
 --- !u!82 &4414518792369118988
 AudioSource:
   m_ObjectHideFlags: 0
@@ -257,7 +272,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ca657d6e5d6d6ec4bb431ea01202af6b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.569
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -372,50 +387,5 @@ Transform:
   m_Children:
   - {fileID: 4286674646753986782}
   - {fileID: 6414105531159271883}
-  - {fileID: 1439334936082903218}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8975867098318598729
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1439334936082903218}
-  - component: {fileID: 7138812634309388629}
-  m_Layer: 0
-  m_Name: _GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1439334936082903218
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8975867098318598729}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3965722514227874008}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7138812634309388629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8975867098318598729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdc856c93697d094aa16d32c1a97f7fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

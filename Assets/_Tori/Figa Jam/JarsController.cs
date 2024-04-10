@@ -15,7 +15,8 @@ public class JarsController : MonoBehaviour
 
     private bool isMoving = false;
     private float targetPosition;
-    
+
+    private int jarsFilled;
     
     [SerializeField] private Material beltMaterial;
     [SerializeField] private List<GameObject> rollers;
@@ -150,6 +151,9 @@ public class JarsController : MonoBehaviour
     }
     void Update()
     {
+        if(jarsFilled == 6)
+            SceneLoader.Instance.LoadScene(4);
+        
         if(GameManager.Instance.gameStopped) return;
         if(Time.timeScale == 0) return;
         if (!isMoving) {
@@ -174,7 +178,7 @@ public class JarsController : MonoBehaviour
                 transform.position = new Vector3(targetPosition, transform.position.y, transform.position.z);
                 isMoving = false;
                 currentJar++;
-                
+                jarsFilled++;
                 pump.DOLocalMove(new Vector3(0, -.5f, 0), goDownDuration).OnComplete((() => jars[currentJar].canFill = true));
             }
         }

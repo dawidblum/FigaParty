@@ -6,7 +6,19 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_ThirdParty/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/_Project/_Scenes/MainMenu.unity
+    guid: 1829ae2e663f6274c9adf93d1985b975
+  - enabled: 1
+    path: Assets/_Tori/Figa Jam/Figa Jam.unity
+    guid: 4dd0d7d693978d641b01aee181f47b36
+  - enabled: 1
+    path: Assets/_Project/_Scenes/FindFiga.unity
+    guid: 4057e6600fe606e47985d84612fa233d
+  - enabled: 1
+    path: Assets/_Tori/Figa Cat/Figa Cat.unity
+    guid: a6ababe02461a0949b27414067113a22
+  - enabled: 1
+    path: Assets/_Project/_Scenes/Minigame.unity
+    guid: 2bda6fbf03b112b4c97f39fc6e87002d
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

@@ -59,8 +59,14 @@ public class FindFigaEntity : MonoBehaviour {
     private void OnMouseDown() {
         if(!isFiga)
             SoundsManager.Instance.PlayAudioShot(AudioLibrary.SoundType.Incorrect_Person);
-        else 
+        else {
             SoundsManager.Instance.PlayAudioShot(AudioLibrary.SoundType.Correct_Person);
+            Invoke(nameof(LoadLevel), 2);
+        }
         
+    }
+
+    private void LoadLevel() {
+        SceneLoader.Instance.LoadScene(4);
     }
 }

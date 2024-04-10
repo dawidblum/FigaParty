@@ -43,7 +43,13 @@ public class AudioLibrary : MonoBehaviour {
         Belt,
         Jar_Fail,
         Jar_Win,
-        Yay
+        Yay,
+        Wrong_Order,
+        Correct_Order,
+        Bell_Press,
+        Pick_Sauce,
+        Pick_Ingredient,
+        New_Order
         
     } 
     

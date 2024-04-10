@@ -38,10 +38,12 @@ public class MiniGameManager : MonoBehaviour {
     }
 
     private IEnumerator CountDownRoutine() {
-        if (countDown > 0)
-            countDownLabel.text = countDown.ToString();
-        else
-            countDownLabel.text = countDownFinishText;
+        if (countDownLabel != null) {
+            if (countDown > 0)
+                countDownLabel.text = countDown.ToString();
+            else
+                countDownLabel.text = countDownFinishText;
+        }
 
         switch (countDown) {
             case 0:
